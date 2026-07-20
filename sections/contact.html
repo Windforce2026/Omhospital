@@ -1,95 +1,97 @@
-﻿<!-- Contact & Booking Section -->
-    <section id="contact" class="py-20 px-4 sm:px-6 bg-slate-100 dark:bg-slate-900/50">
-        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-start">
-            
-            <div class="space-y-8">
+﻿<section id="contact" class="relative py-20 px-4 sm:px-6 bg-slate-100/70 dark:bg-slate-900/30 overflow-hidden">
+    <div class="orb bg-accent-200/30 dark:bg-accent-500/10 w-64 h-64 top-20 right-0 float-slow"></div>
+
+    <div class="max-w-7xl mx-auto relative z-10 grid lg:grid-cols-2 gap-12 items-start">
+
+        <div class="space-y-8 reveal-left">
+            <div>
+                <span class="inline-flex items-center px-4 py-1.5 bg-brand-50/80 dark:bg-brand-900/40 backdrop-blur-sm border border-brand-100 dark:border-brand-800 text-brand-600 dark:text-brand-300 rounded-full text-xs font-bold uppercase tracking-wider shadow-sm">
+                    <i class="fa-regular fa-building mr-1"></i> Get in Touch
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mt-4 mb-4">Contact & <span class="gradient-text">Address</span></h2>
+                <p class="text-slate-500 dark:text-slate-400">We are here to serve you 24/7. Reach out to us for appointments, emergencies, or any medical queries.</p>
+            </div>
+
+            <div class="glass rounded-2xl p-6 flex items-start space-x-4 card-lift">
+                <div class="w-12 h-12 flex-shrink-0 rounded-xl bg-danger-500/10 text-danger-500 flex items-center justify-center text-xl">
+                    <i class="fa-solid fa-location-dot"></i>
+                </div>
                 <div>
-                    <span class="text-brand-600 dark:text-brand-400 font-bold tracking-widest uppercase text-xs">Get in Touch</span>
-                    <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mt-2 mb-4">Contact & Address</h2>
-                    <p class="text-slate-500 dark:text-slate-400">We are here to serve you 24/7. Reach out to us for appointments, emergencies, or any medical queries.</p>
-                </div>
-
-                <div class="bg-white dark:bg-slate-800 rounded-2xl p-6 border border-slate-100 dark:border-slate-700 shadow-sm flex items-start space-x-4">
-                    <div class="w-12 h-12 flex-shrink-0 rounded-xl bg-danger-500/10 text-danger-500 flex items-center justify-center text-xl">
-                        <i class="fa-solid fa-location-dot"></i>
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-slate-900 dark:text-white text-lg mb-1">Hospital Address</h4>
-                        <p class="text-slate-500 dark:text-slate-400 text-sm">Khasra No. 2622, Gali Model 5, N.H. Bypass Road, Near RKGIT College, Ghaziabad, Uttar Pradesh</p>
-                    </div>
-                </div>
-
-                <div class="grid sm:grid-cols-2 gap-6">
-                    <div class="bg-white dark:bg-slate-800 rounded-2xl p-6 border border-slate-100 dark:border-slate-700 shadow-sm flex items-center space-x-4">
-                        <div class="w-12 h-12 flex-shrink-0 rounded-xl bg-brand-500/10 text-brand-600 dark:text-brand-400 flex items-center justify-center text-xl">
-                            <i class="fa-solid fa-phone"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-slate-900 dark:text-white text-sm">Reception</h4>
-                            <a href="tel:+919876543210" class="text-slate-500 dark:text-slate-400 text-sm hover:text-brand-600">+91 98765 43210</a>
-                        </div>
-                    </div>
-                    <div class="bg-danger-600 rounded-2xl p-6 shadow-lg flex items-center space-x-4 transform hover:-translate-y-1 transition-all">
-                        <div class="w-12 h-12 flex-shrink-0 rounded-xl bg-white/20 text-white flex items-center justify-center text-xl">
-                            <i class="fa-solid fa-bell"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-white text-sm">Emergency Contact</h4>
-                            <a href="tel:+919112223344" class="text-white text-sm font-medium hover:underline">+91 91122 23344</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="rounded-2xl overflow-hidden shadow-soft dark:shadow-dark-soft border border-slate-200 dark:border-slate-800 h-[300px] relative">
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3501.68123456789!2d77.4563245!3d28.6729055!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cf1deaddeadde%3A0xdeaddeaddeaddead!2sRKGIT%20College!5e0!3m2!1sen!2sin!4v1600000000000!5m2!1sen!2sin" 
-                        class="w-full h-full"
-                        style="border: 0;"
-                        allowfullscreen="" loading="lazy">
-                    </iframe>
+                    <h4 class="font-bold text-slate-900 dark:text-white text-lg mb-1">Hospital Address</h4>
+                    <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">Khasra No. 2622, Gali Model 5, N.H. Bypass Road, Near RKGIT College, Ghaziabad, Uttar Pradesh</p>
                 </div>
             </div>
-            
-            <!-- Booking Form -->
-            <div id="booking" class="bg-white dark:bg-slate-800 rounded-3xl shadow-soft dark:shadow-dark-soft p-6 sm:p-10 border border-slate-100 dark:border-slate-700 sticky top-24">
-                <h3 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-2 flex items-center">
-                    <i class="fa-solid fa-calendar-check text-brand-600 dark:text-brand-400 mr-3"></i>Appointment Booking
-                </h3>
-                <p class="text-slate-500 dark:text-slate-400 mb-8 text-sm">Fill in your details and we will confirm your appointment shortly.</p>
-                
-                <form class="space-y-5">
-                    <div>
-                        <label class="text-xs text-slate-500 dark:text-slate-400 font-medium block mb-1.5 uppercase tracking-wide">Patient Name</label>
-                        <input type="text" placeholder="John Doe" class="w-full px-4 py-3 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl text-slate-900 dark:text-white focus:ring-2 focus:ring-brand-500 focus:outline-none transition">
-                    </div>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                        <div>
-                            <label class="text-xs text-slate-500 dark:text-slate-400 font-medium block mb-1.5 uppercase tracking-wide">Phone</label>
-                            <input type="tel" placeholder="+91 12345 67890" class="w-full px-4 py-3 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl text-slate-900 dark:text-white focus:ring-2 focus:ring-brand-500 focus:outline-none transition">
-                        </div>
-                        <div>
-                            <label class="text-xs text-slate-500 dark:text-slate-400 font-medium block mb-1.5 uppercase tracking-wide">Date</label>
-                            <input type="date" class="w-full px-4 py-3 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl text-slate-900 dark:text-white focus:ring-2 focus:ring-brand-500 focus:outline-none transition">
-                        </div>
+
+            <div class="grid sm:grid-cols-2 gap-5">
+                <div class="glass rounded-2xl p-5 flex items-center space-x-4 card-lift">
+                    <div class="w-12 h-12 flex-shrink-0 rounded-xl bg-brand-500/10 text-brand-600 dark:text-brand-400 flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-phone"></i>
                     </div>
                     <div>
-                        <label class="text-xs text-slate-500 dark:text-slate-400 font-medium block mb-1.5 uppercase tracking-wide">Department</label>
-                        <select class="w-full px-4 py-3 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl text-slate-900 dark:text-white focus:ring-2 focus:ring-brand-500 focus:outline-none transition">
-                            <option>Free General OPD (10 AM - 1 PM)</option>
-                            <option>ICU / Emergency</option>
-                            <option>Orthopedics</option>
-                            <option>Cardiology</option>
-                            <option>Diagnostic / Lab Tests</option>
-                        </select>
+                        <h4 class="font-bold text-slate-900 dark:text-white text-sm">Reception</h4>
+                        <a href="tel:+919876543210" class="text-slate-500 dark:text-slate-400 text-sm hover:text-brand-600 transition">+91 98765 43210</a>
+                    </div>
+                </div>
+                <div class="rounded-2xl p-5 flex items-center space-x-4 card-lift bg-gradient-to-br from-danger-600 to-danger-500 shadow-lg shadow-danger-500/20">
+                    <div class="w-12 h-12 flex-shrink-0 rounded-xl bg-white/20 text-white flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-bell"></i>
                     </div>
                     <div>
-                        <label class="text-xs text-slate-500 dark:text-slate-400 font-medium block mb-1.5 uppercase tracking-wide">Message (Optional)</label>
-                        <textarea rows="3" placeholder="Briefly describe your symptoms..." class="w-full px-4 py-3 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl text-slate-900 dark:text-white focus:ring-2 focus:ring-brand-500 focus:outline-none transition resize-none"></textarea>
+                        <h4 class="font-bold text-white text-sm">Emergency Contact</h4>
+                        <a href="tel:+919112223344" class="text-white text-sm font-medium hover:underline">+91 91122 23344</a>
                     </div>
-                    <button type="button" class="w-full py-4 bg-brand-600 hover:bg-brand-700 text-white font-bold rounded-xl transition shadow-lg shadow-brand-500/20 flex justify-center items-center">
-                        Request Appointment <i class="fa-solid fa-arrow-right ml-2 text-sm"></i>
-                    </button>
-                </form>
+                </div>
+            </div>
+
+            <div class="rounded-2xl overflow-hidden shadow-premium dark:shadow-dark-soft border border-slate-200 dark:border-slate-800 h-[280px] relative">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3501.68123456789!2d77.4563245!3d28.6729055!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cf1deaddeadde%3A0xdeaddeaddeaddead!2sRKGIT%20College!5e0!3m2!1sen!2sin!4v1600000000000!5m2!1sen!2sin" 
+                    class="w-full h-full"
+                    style="border: 0;"
+                    allowfullscreen="" loading="lazy">
+                </iframe>
             </div>
         </div>
-    </section>
+
+        <div id="booking" class="glass-strong rounded-3xl p-6 sm:p-10 border border-white/50 dark:border-slate-700/50 sticky top-24 reveal-right">
+            <h3 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-2 flex items-center">
+                <i class="fa-solid fa-calendar-check text-brand-600 dark:text-brand-400 mr-3"></i>Appointment Booking
+            </h3>
+            <p class="text-slate-500 dark:text-slate-400 mb-8 text-sm">Fill in your details and we will confirm your appointment shortly.</p>
+
+            <form class="space-y-5">
+                <div>
+                    <label class="text-xs text-slate-500 dark:text-slate-400 font-medium block mb-1.5 uppercase tracking-wide">Patient Name</label>
+                    <input type="text" placeholder="John Doe" class="input-premium w-full px-4 py-3 bg-white/50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-700 rounded-xl text-slate-900 dark:text-white focus:ring-2 focus:ring-brand-500/30 focus:border-brand-500 focus:outline-none">
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                    <div>
+                        <label class="text-xs text-slate-500 dark:text-slate-400 font-medium block mb-1.5 uppercase tracking-wide">Phone</label>
+                        <input type="tel" placeholder="+91 12345 67890" class="input-premium w-full px-4 py-3 bg-white/50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-700 rounded-xl text-slate-900 dark:text-white focus:ring-2 focus:ring-brand-500/30 focus:border-brand-500 focus:outline-none">
+                    </div>
+                    <div>
+                        <label class="text-xs text-slate-500 dark:text-slate-400 font-medium block mb-1.5 uppercase tracking-wide">Date</label>
+                        <input type="date" class="input-premium w-full px-4 py-3 bg-white/50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-700 rounded-xl text-slate-900 dark:text-white focus:ring-2 focus:ring-brand-500/30 focus:border-brand-500 focus:outline-none">
+                    </div>
+                </div>
+                <div>
+                    <label class="text-xs text-slate-500 dark:text-slate-400 font-medium block mb-1.5 uppercase tracking-wide">Department</label>
+                    <select class="input-premium w-full px-4 py-3 bg-white/50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-700 rounded-xl text-slate-900 dark:text-white focus:ring-2 focus:ring-brand-500/30 focus:border-brand-500 focus:outline-none">
+                        <option>Free General OPD (10 AM - 1 PM)</option>
+                        <option>ICU / Emergency</option>
+                        <option>Orthopedics</option>
+                        <option>Cardiology</option>
+                        <option>Diagnostic / Lab Tests</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="text-xs text-slate-500 dark:text-slate-400 font-medium block mb-1.5 uppercase tracking-wide">Message (Optional)</label>
+                    <textarea rows="3" placeholder="Briefly describe your symptoms..." class="input-premium w-full px-4 py-3 bg-white/50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-700 rounded-xl text-slate-900 dark:text-white focus:ring-2 focus:ring-brand-500/30 focus:border-brand-500 focus:outline-none resize-none"></textarea>
+                </div>
+                <button type="button" class="btn-shine w-full py-4 bg-gradient-to-r from-brand-600 to-brand-700 hover:from-brand-700 hover:to-brand-800 text-white font-bold rounded-xl transition shadow-lg shadow-brand-500/25 hover:shadow-brand-500/40 flex justify-center items-center">
+                    Request Appointment <i class="fa-solid fa-arrow-right ml-2 text-sm"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+</section>

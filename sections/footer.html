@@ -1,19 +1,73 @@
-﻿<!-- Footer -->
-    <footer class="py-12 px-4 sm:px-6 border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-center md:text-left">
-            <div class="flex items-center space-x-2 text-base sm:text-lg font-extrabold text-slate-900 dark:text-white mb-4 md:mb-0">
-                <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-brand-600 to-accent-500 flex items-center justify-center text-white">
-                    <i class="fa-solid fa-truck-medical"></i>
+﻿<footer class="relative py-12 px-4 sm:px-6 border-t border-slate-200/80 dark:border-slate-800/80 bg-white dark:bg-slate-950 overflow-hidden">
+    <div class="orb bg-brand-100/20 dark:bg-brand-900/10 w-48 h-48 -top-10 -left-10 float-slow"></div>
+
+    <div class="max-w-7xl mx-auto relative z-10">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
+
+            <div class="sm:col-span-2 lg:col-span-1 reveal">
+                <div class="flex items-center space-x-2.5 text-base sm:text-lg font-extrabold text-slate-900 dark:text-white mb-4">
+                    <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-brand-600 to-accent-500 flex items-center justify-center text-white shadow-md">
+                        <i class="fa-solid fa-truck-medical"></i>
+                    </div>
+                    <span>OM Multi Specialty <span class="text-accent-500">Hospital & Ayush Center</span></span>
                 </div>
-                <span>OM Multi Specialty <span class="text-accent-500">Hospital & Ayush Center</span></span>
+                <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">Providing quality healthcare with compassion and advanced medical facilities since 2010.</p>
             </div>
-            <p class="text-slate-500 dark:text-slate-500 text-xs sm:text-sm">
-                &copy; <span id="year"></span> OM Hospital. All Rights Reserved. | Ayushman Bharat Participating Hospital
-            </p>
-            <div class="flex space-x-6 mt-6 md:mt-0 text-slate-400 dark:text-slate-500 text-lg">
-                <a href="#" class="hover:text-brand-600 dark:hover:text-brand-400 transition"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="#" class="hover:text-brand-600 dark:hover:text-brand-400 transition"><i class="fa-brands fa-twitter"></i></a>
-                <a href="#" class="hover:text-brand-600 dark:hover:text-brand-400 transition"><i class="fa-brands fa-instagram"></i></a>
+
+            <div class="reveal">
+                <h4 class="font-bold text-slate-900 dark:text-white text-sm uppercase tracking-wider mb-4">Quick Links</h4>
+                <ul class="space-y-2.5 text-sm text-slate-500 dark:text-slate-400">
+                    <li><a href="#home" class="hover:text-brand-600 dark:hover:text-brand-400 transition">Home</a></li>
+                    <li><a href="#pricing" class="hover:text-brand-600 dark:hover:text-brand-400 transition">OPD & Pricing</a></li>
+                    <li><a href="#facilities" class="hover:text-brand-600 dark:hover:text-brand-400 transition">Facilities</a></li>
+                    <li><a href="#testimonials" class="hover:text-brand-600 dark:hover:text-brand-400 transition">Reviews</a></li>
+                    <li><a href="#contact" class="hover:text-brand-600 dark:hover:text-brand-400 transition">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="reveal">
+                <h4 class="font-bold text-slate-900 dark:text-white text-sm uppercase tracking-wider mb-4">Services</h4>
+                <ul class="space-y-2.5 text-sm text-slate-500 dark:text-slate-400">
+                    <li><a href="#" class="hover:text-brand-600 dark:hover:text-brand-400 transition">Emergency Care</a></li>
+                    <li><a href="#" class="hover:text-brand-600 dark:hover:text-brand-400 transition">OPD Consultation</a></li>
+                    <li><a href="#" class="hover:text-brand-600 dark:hover:text-brand-400 transition">Diagnostic Lab</a></li>
+                    <li><a href="#" class="hover:text-brand-600 dark:hover:text-brand-400 transition">ICU & Ward</a></li>
+                    <li><a href="#" class="hover:text-brand-600 dark:hover:text-brand-400 transition">Day Care</a></li>
+                </ul>
+            </div>
+
+            <div class="reveal">
+                <h4 class="font-bold text-slate-900 dark:text-white text-sm uppercase tracking-wider mb-4">Contact</h4>
+                <ul class="space-y-2.5 text-sm text-slate-500 dark:text-slate-400">
+                    <li class="flex items-start space-x-2">
+                        <i class="fa-solid fa-phone mt-0.5 text-brand-500"></i>
+                        <span>+91 98765 43210</span>
+                    </li>
+                    <li class="flex items-start space-x-2">
+                        <i class="fa-solid fa-bell mt-0.5 text-danger-500"></i>
+                        <span>+91 91122 23344 <span class="text-xs">(Emergency)</span></span>
+                    </li>
+                    <li class="flex items-start space-x-2">
+                        <i class="fa-regular fa-clock mt-0.5 text-brand-500"></i>
+                        <span>Open 24/7</span>
+                    </li>
+                </ul>
+                <div class="flex space-x-4 mt-5 text-slate-400 dark:text-slate-500 text-lg">
+                    <a href="#" class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center hover:bg-brand-100 dark:hover:bg-brand-900/40 hover:text-brand-600 dark:hover:text-brand-400 transition"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center hover:bg-brand-100 dark:hover:bg-brand-900/40 hover:text-brand-600 dark:hover:text-brand-400 transition"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center hover:bg-brand-100 dark:hover:bg-brand-900/40 hover:text-brand-600 dark:hover:text-brand-400 transition"><i class="fa-brands fa-instagram"></i></a>
+                </div>
             </div>
         </div>
-    </footer>
+
+        <hr class="gradient-divider">
+
+        <div class="flex flex-col sm:flex-row justify-between items-center pt-8 text-xs sm:text-sm text-slate-500 dark:text-slate-500 space-y-3 sm:space-y-0">
+            <p>&copy; <span id="year"></span> OM Hospital. All Rights Reserved. | Premium Healthcare Provider</p>
+            <div class="flex space-x-6">
+                <a href="#" class="hover:text-brand-600 dark:hover:text-brand-400 transition">Privacy Policy</a>
+                <a href="#" class="hover:text-brand-600 dark:hover:text-brand-400 transition">Terms of Service</a>
+            </div>
+        </div>
+    </div>
+</footer>

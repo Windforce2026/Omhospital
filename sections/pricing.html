@@ -1,61 +1,61 @@
-﻿<!-- Free OPD & Pricing Section -->
-    <section id="pricing" class="py-20 px-4 sm:px-6 bg-white dark:bg-slate-900/50">
-        <div class="max-w-7xl mx-auto">
-            
-            <!-- Highlighted Free OPD Banner -->
-            <div class="mb-12 mx-auto max-w-5xl bg-gradient-to-r from-brand-600 to-accent-500 text-white py-6 px-6 rounded-2xl shadow-xl banner-pulse text-center">
-                <h3 class="text-xl sm:text-2xl font-extrabold tracking-wide flex items-center justify-center flex-wrap">
-                    <i class="fa-solid fa-hand-holding-medical mr-3 text-2xl sm:text-3xl"></i>
-                    Free General OPD Services
-                </h3>
-                <p class="text-sm sm:text-lg font-medium mt-2 opacity-90">
-                    <i class="fa-regular fa-clock mr-2"></i>OPD Timings: 10:00 AM - 1:00 PM
-                </p>
+﻿<section id="pricing" class="relative py-20 px-4 sm:px-6 bg-white dark:bg-slate-900/50 overflow-hidden">
+    <div class="orb bg-brand-100/40 dark:bg-brand-900/20 w-72 h-72 bottom-0 left-0 float-slow" style="animation-delay: -1s;"></div>
+    <div class="orb bg-accent-200/20 dark:bg-accent-500/10 w-56 h-56 top-20 right-0 float-medium" style="animation-delay: -3s;"></div>
+
+    <div class="max-w-7xl mx-auto relative z-10">
+
+        <div class="mb-12 mx-auto max-w-5xl bg-gradient-to-r from-brand-600 to-accent-500 text-white py-6 px-6 rounded-2xl shadow-xl banner-pulse text-center reveal">
+            <h3 class="text-xl sm:text-2xl font-extrabold tracking-wide flex items-center justify-center flex-wrap">
+                <i class="fa-solid fa-hand-holding-medical mr-3 text-2xl sm:text-3xl"></i>
+                General OPD Services
+            </h3>
+            <p class="text-sm sm:text-lg font-medium mt-2 opacity-90">
+                <i class="fa-regular fa-clock mr-2"></i>OPD Timings: 10:00 AM - 1:00 PM
+            </p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 reveal-stagger">
+            <!-- Card 1: OPD Consultation (Featured) -->
+            <div data-tilt class="theme-transition group relative bg-gradient-to-br from-brand-600 to-accent-500 text-white rounded-3xl p-6 shadow-lg flex flex-col hover:-translate-y-2 transition-all duration-300 overflow-hidden before:absolute before:inset-0 before:bg-white/5 before:opacity-0 before:group-hover:opacity-100 before:transition-opacity featured-glow">
+                <div class="absolute top-0 right-0 bg-white/25 backdrop-blur-sm text-white font-bold text-xs px-4 py-2 rounded-bl-2xl rounded-tr-3xl">MOST POPULAR</div>
+                <div class="w-14 h-14 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center text-white text-2xl mb-5 group-hover:scale-110 transition-transform">
+                    <i class="fa-solid fa-user-doctor"></i>
+                </div>
+                <h3 class="text-lg font-bold text-white mb-2">OPD Consultation</h3>
+                <p class="text-white/80 text-sm mb-4">Expert physician consultation with comprehensive health checkups.</p>
+                <p class="text-3xl font-extrabold text-white mt-auto">₹200 <span class="text-base font-medium text-white/70">Only</span></p>
             </div>
 
-            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-                <!-- Card 1: OPD Pricing -->
-                <div class="theme-transition group relative bg-gradient-to-br from-brand-600 to-accent-500 text-white rounded-3xl p-6 shadow-lg flex flex-col justify-center items-center text-center transform hover:-translate-y-2 transition-all duration-300">
-                    <span class="bg-white/20 text-white text-xs px-3 py-1 rounded-full font-bold uppercase mb-3">Special Offer</span>
-                    <h3 class="text-lg font-bold mb-3">OPD Consultation</h3>
-                    <div class="flex items-center space-x-2 mb-1">
-                        <span class="text-xl line-through opacity-70">₹500</span>
-                        <i class="fa-solid fa-arrow-right text-sm"></i>
-                    </div>
-                    <p class="text-4xl font-extrabold">₹200</p>
-                    <p class="text-sm opacity-90 mt-1">Only</p>
+            <!-- Card 2: Blood Test -->
+            <div data-tilt class="theme-transition group relative bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700/50 rounded-3xl p-6 hover:shadow-soft dark:hover:shadow-dark-soft hover:-translate-y-2 transition-all duration-300 overflow-hidden flex flex-col card-lift">
+                <div class="absolute top-0 right-0 bg-accent-500 text-slate-900 font-bold text-xs px-4 py-2 rounded-bl-2xl rounded-tr-3xl">SAVE 40%</div>
+                <div class="w-14 h-14 rounded-2xl bg-rose-100 dark:bg-rose-900/40 flex items-center justify-center text-rose-600 dark:text-rose-400 text-2xl mb-5 group-hover:scale-110 transition-transform">
+                    <i class="fa-solid fa-dna"></i>
                 </div>
+                <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Blood Tests</h3>
+                <p class="text-slate-500 dark:text-slate-400 text-sm mb-4">Comprehensive diagnostic panels at highly discounted rates.</p>
+                <p class="text-3xl font-extrabold text-brand-600 dark:text-accent-400 mt-auto">40% <span class="text-base font-medium text-slate-500">Off</span></p>
+            </div>
 
-                <!-- Card 2: Blood Test -->
-                <div class="theme-transition group relative bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700/50 rounded-3xl p-6 hover:shadow-soft dark:hover:shadow-dark-soft hover:-translate-y-2 transition-all duration-300 overflow-hidden flex flex-col">
-                    <div class="absolute top-0 right-0 bg-accent-500 text-slate-900 font-bold text-xs px-4 py-2 rounded-bl-2xl rounded-tr-3xl">SAVE 40%</div>
-                    <div class="w-14 h-14 rounded-2xl bg-rose-100 dark:bg-rose-900/40 flex items-center justify-center text-rose-600 dark:text-rose-400 text-2xl mb-5 group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-droplet"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Blood Tests</h3>
-                    <p class="text-slate-500 dark:text-slate-400 text-sm mb-4">Comprehensive diagnostic panels at highly discounted rates.</p>
-                    <p class="text-3xl font-extrabold text-brand-600 dark:text-accent-400 mt-auto">40% <span class="text-base font-medium text-slate-500">Off</span></p>
+            <!-- Card 3: General Ward -->
+            <div data-tilt class="theme-transition group relative bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700/50 rounded-3xl p-6 hover:shadow-soft dark:hover:shadow-dark-soft hover:-translate-y-2 transition-all duration-300 overflow-hidden flex flex-col card-lift before:absolute before:inset-0 before:bg-gradient-to-br before:from-blue-500/0 before:to-blue-500/0 before:hover:from-blue-500/5 before:hover:to-blue-500/0 before:transition-colors">
+                <div class="w-14 h-14 rounded-2xl bg-blue-100 dark:bg-blue-900/40 flex items-center justify-center text-blue-600 dark:text-blue-400 text-2xl mb-5 group-hover:scale-110 transition-transform">
+                    <i class="fa-solid fa-bed-pulse"></i>
                 </div>
-                
-                <!-- Card 3: General Ward -->
-                <div class="theme-transition group bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700/50 rounded-3xl p-6 hover:shadow-soft dark:hover:shadow-dark-soft hover:-translate-y-2 transition-all duration-300 flex flex-col">
-                    <div class="w-14 h-14 rounded-2xl bg-blue-100 dark:bg-blue-900/40 flex items-center justify-center text-blue-600 dark:text-blue-400 text-2xl mb-5 group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-bed"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">General Ward</h3>
-                    <p class="text-slate-500 dark:text-slate-400 text-sm mb-4">Comfortable accommodation with 24/7 nursing care.</p>
-                    <p class="text-3xl font-extrabold text-brand-600 dark:text-accent-400 mt-auto">₹1,000 <span class="text-base font-medium text-slate-500">/ day</span></p>
+                <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">General Ward</h3>
+                <p class="text-slate-500 dark:text-slate-400 text-sm mb-4 relative z-10">Comfortable accommodation with 24/7 nursing care.</p>
+                <p class="text-3xl font-extrabold text-brand-600 dark:text-accent-400 mt-auto relative z-10">₹1,000 <span class="text-base font-medium text-slate-500">/ day</span></p>
+            </div>
+
+            <!-- Card 4: Day Care -->
+            <div data-tilt class="theme-transition group relative bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700/50 rounded-3xl p-6 hover:shadow-soft dark:hover:shadow-dark-soft hover:-translate-y-2 transition-all duration-300 overflow-hidden flex flex-col card-lift before:absolute before:inset-0 before:bg-gradient-to-br before:from-emerald-500/0 before:to-emerald-500/0 before:hover:from-emerald-500/5 before:hover:to-emerald-500/0 before:transition-colors">
+                <div class="w-14 h-14 rounded-2xl bg-emerald-100 dark:bg-emerald-900/40 flex items-center justify-center text-emerald-600 dark:text-emerald-400 text-2xl mb-5 group-hover:scale-110 transition-transform">
+                    <i class="fa-solid fa-clock"></i>
                 </div>
-                
-                <!-- Card 4: Day Care -->
-                <div class="theme-transition group bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700/50 rounded-3xl p-6 hover:shadow-soft dark:hover:shadow-dark-soft hover:-translate-y-2 transition-all duration-300 flex flex-col">
-                    <div class="w-14 h-14 rounded-2xl bg-emerald-100 dark:bg-emerald-900/40 flex items-center justify-center text-emerald-600 dark:text-emerald-400 text-2xl mb-5 group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-briefcase-medical"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Day Care</h3>
-                    <p class="text-slate-500 dark:text-slate-400 text-sm mb-4">Short-stay procedures and recovery facilities.</p>
-                    <p class="text-3xl font-extrabold text-brand-600 dark:text-accent-400 mt-auto">₹500 <span class="text-base font-medium text-slate-500">/ day</span></p>
-                </div>
+                <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Day Care</h3>
+                <p class="text-slate-500 dark:text-slate-400 text-sm mb-4 relative z-10">Short-stay procedures and recovery facilities.</p>
+                <p class="text-3xl font-extrabold text-brand-600 dark:text-accent-400 mt-auto relative z-10">₹500 <span class="text-base font-medium text-slate-500">/ day</span></p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
