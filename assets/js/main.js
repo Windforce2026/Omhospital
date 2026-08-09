@@ -86,14 +86,21 @@ function initScrollReveal() {
   const targets = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale, .reveal-stagger');
   if (!targets.length) return;
 
+  const reveal = (el) => {
+    el.classList.add('revealed');
+    observer.unobserve(el);
+  };
+
+  if (!('IntersectionObserver' in window)) {
+    targets.forEach(el => el.classList.add('revealed'));
+    return;
+  }
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('revealed');
-        observer.unobserve(entry.target);
-      }
+      if (entry.isIntersecting) reveal(entry.target);
     });
-  }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+  }, { threshold: 0, rootMargin: '0px 0px -40px 0px' });
 
   targets.forEach(el => observer.observe(el));
 }
