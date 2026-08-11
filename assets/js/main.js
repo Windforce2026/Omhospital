@@ -105,6 +105,32 @@ function initScrollReveal() {
   targets.forEach(el => observer.observe(el));
 }
 
+function initScrollTopButton() {
+  const button = document.getElementById('scroll-top-btn');
+  if (!button) return;
+  const deptPage = document.getElementById('dept-detail-page');
+
+  const isDeptOpen = () => deptPage && !deptPage.classList.contains('hidden');
+  const getScrollY = () => (isDeptOpen() ? deptPage.scrollTop : window.scrollY);
+
+  const show = () => {
+    const visible = getScrollY() > 400;
+    button.classList.toggle('opacity-0', !visible);
+    button.classList.toggle('translate-y-4', !visible);
+    button.classList.toggle('pointer-events-none', !visible);
+  };
+
+  window.addEventListener('scroll', show, { passive: true });
+  if (deptPage) deptPage.addEventListener('scroll', show, { passive: true });
+  document.querySelectorAll('.dd-close').forEach(btn => btn.addEventListener('click', show));
+  show();
+
+  button.addEventListener('click', () => {
+    const target = isDeptOpen() ? deptPage : window;
+    target.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
+
 function initNavbarScroll() {
   const navbar = document.getElementById('navbar');
   if (!navbar) return;
@@ -859,11 +885,199 @@ function initDepartmentDetail() {
       heroTrack.style.opacity = Math.max(1 - y / 450, 0);
     }, { passive: true });
   }
+
+  const scrollDownBtn = document.getElementById('dd-scroll-down');
+  if (scrollDownBtn) {
+    scrollDownBtn.addEventListener('click', () => {
+      const overview = document.getElementById('dd-overview');
+      if (overview) overview.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  }
+
+  const navToggle = document.getElementById('dd-nav-toggle');
+  const navDropdown = document.getElementById('dd-nav-dropdown');
+  const navToggleIcon = document.getElementById('dd-nav-toggle-icon');
+  if (navToggle && navDropdown) {
+    const closeDropdown = () => {
+      navDropdown.classList.add('hidden');
+      navToggle.setAttribute('aria-expanded', 'false');
+      if (navToggleIcon) navToggleIcon.className = 'fa-solid fa-bars';
+    };
+    navToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isHidden = navDropdown.classList.contains('hidden');
+      navDropdown.classList.toggle('hidden', !isHidden);
+      navToggle.setAttribute('aria-expanded', String(isHidden));
+      if (navToggleIcon) navToggleIcon.className = isHidden ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
+    });
+    navLinks.forEach(link => link.addEventListener('click', closeDropdown));
+    page.addEventListener('click', (e) => {
+      if (!navDropdown.classList.contains('hidden') && !navToggle.contains(e.target)) closeDropdown();
+    });
+  }
 }
 
 function getInitials(name) {
   const names = name.replace(/^Dr\.?\s*/i, '').split(/\s+/).filter(Boolean);
   return ((names[0] || '')[0] || '') + ((names[1] || '')[0] || '');
+}
+
+const DOCTOR_DETAILS = {
+  'Dr. Pinky Agarwal': {
+    photo: 'assets/img/dr-pinky-agarwal.jpg',
+    specialty: 'Obstetrician & Gynaecologist',
+    qualificationLine: 'MBBS, DGO, DNB (Obstetrics & Gynaecology) · 16+ Years Experience',
+    about: 'Dr. Pinky Agarwal is a senior Obstetrician and Gynaecologist in Ghaziabad with over 16 years of dedicated experience in managing complex pregnancy cases and women\u2019s health issues. She specialises in early pregnancy care and innovative approaches to ectopic pregnancies, delivering personalised treatment plans for every patient. Her patient-centric philosophy, warm approach and commitment to safe motherhood have made her a trusted name for families across the region.',
+    qualifications: [
+      { degree: 'MBBS', note: 'Bachelor of Medicine & Bachelor of Surgery' },
+      { degree: 'DGO', note: 'Diploma in Gynaecology & Obstetrics' },
+      { degree: 'DNB (Obs & Gynae)', note: 'Diplomate of National Board — Obstetrics & Gynaecology' },
+      { degree: '16+ Years Experience', note: 'Complex pregnancy, high-risk delivery and women\u2019s health care' }
+    ],
+    specialties: ['Normal Delivery', 'C-Section (Caesarean)', 'High-Risk Pregnancy Care', 'Early Pregnancy Care', 'Ectopic Pregnancy Management', 'PCOD / PCOS Treatment', 'Infertility Consultation', 'Wellness & Teens Clinic']
+  }
+};
+
+function initDoctorDetail() {
+  const page = document.getElementById('doctor-detail-page');
+  if (!page) return;
+
+  const closeBtns = Array.from(page.querySelectorAll('.doc-close'));
+  const bookBtns = Array.from(page.querySelectorAll('.doc-book-btn'));
+  const heroImg = document.getElementById('doc-hero-img');
+  const photo = document.getElementById('doc-photo');
+  const photoFallback = document.getElementById('doc-photo-fallback');
+  const nameEl = document.getElementById('doc-name');
+  const specialtyBadge = document.getElementById('doc-specialty-badge');
+  const qualLine = document.getElementById('doc-qual-line');
+  const aboutText = document.getElementById('doc-about-text');
+  const qualList = document.getElementById('doc-qual-list');
+  const specialtyList = document.getElementById('doc-specialty-list');
+  const ctaDoctor = document.getElementById('doc-cta-doctor');
+  const doctorCards = Array.from(document.querySelectorAll('#doctors .grid > .group'));
+  if (!nameEl || !aboutText || !qualList || !specialtyList) return;
+
+  function parseDegreeLine(text) {
+    const idx = text.indexOf('\u00B7');
+    const degreePart = (idx > -1 ? text.slice(0, idx) : text).trim();
+    return degreePart.split(',').map(s => s.trim()).filter(Boolean);
+  }
+
+  function openDoctor(card) {
+    const bookBtn = card.querySelector('.doctor-book-btn');
+    const doctorLabel = (bookBtn && bookBtn.dataset.doctor) || card.querySelector('h3').textContent.trim();
+    const doctorName = doctorLabel.includes(' (') ? doctorLabel.slice(0, doctorLabel.indexOf(' (')) : doctorLabel;
+    const dept = (bookBtn && bookBtn.dataset.dept) || '';
+    const details = DOCTOR_DETAILS[doctorName] || {};
+
+    const cardImg = card.querySelector('img');
+    const cardPhoto = details.photo || (cardImg ? cardImg.getAttribute('src') : '') || '';
+    const cardDesc = card.querySelector('p.text-xs.leading-relaxed');
+    const descText = cardDesc ? cardDesc.textContent.trim() : '';
+    const degrees = details.qualifications ? details.qualifications.map(q => q.degree) : parseDegreeLine(descText);
+
+    heroImg.src = cardPhoto;
+    heroImg.alt = `${doctorName} at Om Multi Speciality Hospital`;
+    photo.src = cardPhoto;
+    photo.alt = heroImg.alt;
+    if (cardPhoto) {
+      photo.style.display = 'block';
+      photoFallback.style.display = 'none';
+    } else {
+      photo.style.display = 'none';
+      photoFallback.style.display = 'flex';
+      photoFallback.textContent = getInitials(doctorName);
+    }
+
+    nameEl.textContent = doctorName;
+    specialtyBadge.textContent = details.specialty || dept || 'Consulting Specialist';
+    qualLine.textContent = details.qualificationLine || degrees.join(', ') || 'Consulting Specialist';
+    aboutText.textContent = details.about || descText || `${doctorName} is a consulting specialist at Om Multi Speciality Hospital, Ghaziabad.`;
+    ctaDoctor.textContent = doctorName.replace(/^Dr\.?\s*/i, 'Dr. ');
+
+    const qualData = details.qualifications || degrees.map(d => ({ degree: d, note: '' }));
+    qualList.innerHTML = '';
+    qualData.forEach(q => {
+      const item = document.createElement('div');
+      item.className = 'rounded-2xl p-6 bg-white dark:bg-slate-900 border border-slate-200/70 dark:border-slate-700/50 shadow-soft flex items-start gap-4';
+      item.innerHTML = `
+        <div class="w-11 h-11 flex-shrink-0 rounded-xl bg-brand-50 dark:bg-brand-900/40 text-brand-600 dark:text-brand-300 flex items-center justify-center text-lg">
+          <i class="fa-solid fa-graduation-cap"></i>
+        </div>
+        <div>
+          <h3 class="font-bold text-slate-900 dark:text-white text-sm sm:text-base">${q.degree}</h3>
+          ${q.note ? `<p class="text-xs text-slate-500 dark:text-slate-400 mt-1 leading-relaxed">${q.note}</p>` : ''}
+        </div>`;
+      qualList.appendChild(item);
+    });
+
+    const specialtyData = details.specialties || [];
+    specialtyList.innerHTML = '';
+    if (specialtyData.length) {
+      specialtyData.forEach(s => {
+        const chip = document.createElement('div');
+        chip.className = 'flex items-center gap-3 rounded-2xl px-5 py-4 bg-white dark:bg-slate-900 border border-slate-200/70 dark:border-slate-700/50 text-slate-700 dark:text-slate-200 font-semibold text-sm';
+        chip.innerHTML = `<span class="flex-shrink-0 w-9 h-9 rounded-full bg-brand-50 dark:bg-brand-900/40 text-brand-600 dark:text-brand-300 flex items-center justify-center text-xs"><i class="fa-solid fa-check"></i></span>${s}`;
+        specialtyList.appendChild(chip);
+      });
+    } else {
+      specialtyList.innerHTML = '<p class="col-span-full text-sm text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-800/50 rounded-2xl p-8 text-center">Please call reception for the latest information about this specialist.</p>';
+    }
+
+    document.title = `${doctorName} | Om Multi Speciality Hospital`;
+    page.classList.add('anim-in');
+    page.classList.remove('hidden');
+    page.scrollTop = 0;
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeDoctor() {
+    page.classList.add('hidden');
+    page.classList.remove('anim-in');
+    document.body.style.overflow = '';
+    document.title = 'Om Multi Speciality Hospital (Formally Known as Om Multi Speciality Hospital & Ayush Centre) — Ghaziabad';
+    const doctorsSection = document.getElementById('doctors');
+    if (doctorsSection) doctorsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function openBooking() {
+    closeDoctor();
+    const booking = document.getElementById('booking');
+    if (booking) setTimeout(() => booking.scrollIntoView({ behavior: 'smooth', block: 'center' }), 200);
+  }
+
+  doctorCards.forEach(card => {
+    const hint = document.createElement('button');
+    hint.type = 'button';
+    hint.className = 'doc-view mt-3 text-[11px] font-bold text-brand-600 dark:text-brand-400 hover:text-brand-700 dark:hover:text-brand-300 hover:underline inline-flex items-center justify-center gap-1.5';
+    hint.innerHTML = '<i class="fa-solid fa-id-badge"></i> View Full Profile';
+    hint.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      openDoctor(card);
+    });
+    card.appendChild(hint);
+
+    card.setAttribute('role', 'button');
+    card.setAttribute('tabindex', '0');
+    card.addEventListener('click', (e) => {
+      if (e.target.closest('.doctor-book-btn')) return;
+      openDoctor(card);
+    });
+    card.addEventListener('keydown', (e) => {
+      if ((e.key === 'Enter' || e.key === ' ') && !e.target.closest('.doctor-book-btn')) {
+        e.preventDefault();
+        openDoctor(card);
+      }
+    });
+  });
+
+  closeBtns.forEach(btn => btn.addEventListener('click', closeDoctor));
+  bookBtns.forEach(btn => btn.addEventListener('click', openBooking));
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !page.classList.contains('hidden')) closeDoctor();
+  });
 }
 
 function getDoctorPhoto(btn) {
@@ -908,7 +1122,9 @@ async function initPage() {
     initMobileMenu();
     initCarousel();
     initDepartmentDetail();
+    initDoctorDetail();
     initScrollReveal();
+    initScrollTopButton();
     initNavbarScroll();
     initNavbarActive();
     initTilt3D();

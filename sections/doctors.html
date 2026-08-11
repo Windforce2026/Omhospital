@@ -18,13 +18,13 @@
             <!-- Dr. Pinky Agarwal -->
             <div data-tilt class="group relative bg-white/80 dark:bg-slate-800/50 backdrop-blur-sm border border-slate-200/80 dark:border-slate-700/40 rounded-3xl p-6 card-lift hover-3d hover:border-pink-300/50 dark:hover:border-pink-700/50 transition-all duration-300 flex flex-col text-center">
                 <div class="tilt-content relative mx-auto w-20 h-20 rounded-full shadow-lg shadow-pink-500/30 group-hover:scale-110 transition-all duration-300 mb-4 overflow-hidden ring-2 ring-pink-300/50 dark:ring-pink-700/50">
-                    <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=150&h=150&fit=crop&crop=face&auto=format" alt="Dr. Pinky Agarwal" class="w-full h-full object-cover doctor-img" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                    <img src="assets/img/dr-pinky-agarwal.jpg" alt="Dr. Pinky Agarwal" class="w-full h-full object-cover doctor-img" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
                     <div class="absolute inset-0 bg-gradient-to-br from-pink-400 to-rose-500 text-white items-center justify-center text-2xl font-extrabold hidden">PA</div>
                 </div>
                 <div class="tilt-content relative flex-1 flex flex-col">
                     <h3 class="font-bold text-slate-900 dark:text-white text-base leading-tight">Dr. Pinky Agarwal</h3>
                     <p class="text-pink-600 dark:text-pink-400 text-xs font-semibold uppercase tracking-wide mt-1 mb-2">Gynecologist &amp; Obstetrician</p>
-                    <p class="text-slate-500 dark:text-slate-400 text-xs leading-relaxed mb-3">MBBS, MS (Obs &amp; Gynae) &middot; Women's Gynaec &amp; Obstetric Clinic. Pregnancy care, high-risk deliveries, PCOD/PCOS &amp; infertility consultations.</p>
+                    <p class="text-slate-500 dark:text-slate-400 text-xs leading-relaxed mb-3">MBBS, DGO, DNB (Obs &amp; Gynae) &middot; 16+ years in pregnancy care, high-risk deliveries, PCOD/PCOS &amp; infertility consultations.</p>
                     <div class="mt-auto pt-3 border-t border-slate-100 dark:border-slate-700 flex items-center justify-center gap-2 text-[11px] text-slate-400">
                         <i class="fa-regular fa-clock"></i><span>By Appointment</span>
                     </div>
@@ -260,3 +260,103 @@
         </p>
     </div>
 </section>
+
+<!-- ══ Doctor Detail Page (full-screen immersive view) ══ -->
+<div id="doctor-detail-page" class="dept-page hidden" aria-live="polite">
+    <!-- Back / close bar -->
+    <div class="relative z-20 flex items-center justify-between px-5 sm:px-8 py-4">
+        <button id="doc-close" class="doc-close inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border border-slate-200/70 dark:border-slate-700/50 text-sm font-bold text-slate-700 dark:text-slate-200 shadow-soft hover:shadow-premium hover:scale-[1.03] transition-all" aria-label="Back to doctors">
+            <i class="fa-solid fa-arrow-left text-brand-600 dark:text-brand-400"></i> All Doctors
+        </button>
+        <button id="doc-close-x" class="doc-close w-10 h-10 rounded-full bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border border-slate-200/70 dark:border-slate-700/50 text-slate-600 dark:text-slate-300 flex items-center justify-center shadow-soft hover:rotate-90 transition-all duration-300" aria-label="Close doctor profile">
+            <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
+    </div>
+
+    <!-- ══ Hero ══ -->
+    <header class="relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-900/80 to-slate-950">
+            <img id="doc-hero-img" alt="" class="doc-hero-img absolute inset-0 w-full h-full object-cover opacity-30" loading="eager" onerror="this.style.display='none'">
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-50 dark:from-slate-950 via-slate-950/30 to-slate-950/60"></div>
+        <div class="orb bg-brand-500/30 w-72 h-72 -top-20 -right-16 float-slow"></div>
+
+        <div class="relative max-w-6xl mx-auto px-5 sm:px-8 pt-4 pb-14 sm:pb-16">
+            <div class="flex flex-col sm:flex-row items-center gap-6 sm:gap-10">
+                <div class="relative w-32 h-32 sm:w-44 sm:h-44 rounded-3xl overflow-hidden ring-4 ring-white/25 shadow-2xl shadow-brand-500/20 shrink-0 bg-white">
+                    <img id="doc-photo" alt="" class="w-full h-full object-cover" loading="eager" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                    <div id="doc-photo-fallback" class="absolute inset-0 bg-gradient-to-br from-brand-400 to-accent-500 text-white items-center justify-center text-5xl font-extrabold hidden">PA</div>
+                </div>
+                <div class="text-center sm:text-left flex-1">
+                    <span id="doc-specialty-badge" class="inline-flex items-center px-4 py-1.5 mb-3 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white/90 text-xs font-bold uppercase tracking-widest"></span>
+                    <h1 id="doc-name" class="text-3xl sm:text-5xl font-extrabold text-white leading-tight drop-shadow-2xl">Doctor</h1>
+                    <p id="doc-qual-line" class="mt-3 text-white/80 text-sm sm:text-base font-medium"></p>
+                    <div class="flex flex-wrap justify-center sm:justify-start gap-3 mt-6">
+                        <button id="doc-book" class="doc-book-btn inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-brand-600 to-accent-500 text-white font-bold shadow-xl shadow-brand-500/30 hover:scale-[1.03] transition-all text-sm">
+                            <i class="fa-solid fa-calendar-check"></i> Book Appointment
+                        </button>
+                        <a href="tel:+919876543210" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/10 backdrop-blur-md border border-white/25 text-white font-bold hover:bg-white hover:text-slate-900 transition-all text-sm">
+                            <i class="fa-solid fa-phone"></i> Call Reception
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="max-w-6xl mx-auto px-5 sm:px-8 pb-24">
+
+        <!-- ══ About ══ -->
+        <section class="scroll-mt-24 pt-12">
+            <div class="max-w-3xl reveal">
+                <span class="inline-flex items-center px-4 py-1.5 bg-brand-50 dark:bg-brand-900/40 border border-brand-100 dark:border-brand-800 text-brand-600 dark:text-brand-300 rounded-full text-xs font-bold uppercase tracking-wider shadow-sm mb-5">
+                    <i class="fa-solid fa-user-doctor mr-1.5"></i> About the Doctor
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mb-4">Know your <span class="gradient-text">specialist</span></h2>
+                <p id="doc-about-text" class="text-slate-600 dark:text-slate-300 leading-relaxed text-base sm:text-lg"></p>
+            </div>
+        </section>
+
+        <!-- ══ Qualifications & Experience ══ -->
+        <section class="scroll-mt-24 pt-14 sm:pt-20">
+            <div class="text-center mb-10 reveal">
+                <span class="inline-flex items-center px-4 py-1.5 bg-accent-50 dark:bg-accent-900/30 border border-accent-100 dark:border-accent-800 text-accent-600 dark:text-accent-300 rounded-full text-xs font-bold uppercase tracking-wider shadow-sm mb-4">
+                    <i class="fa-solid fa-graduation-cap mr-1.5"></i> Qualifications &amp; Experience
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white">Educational <span class="gradient-text">background</span></h2>
+            </div>
+            <div id="doc-qual-list" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            </div>
+        </section>
+
+        <!-- ══ Specialties ══ -->
+        <section class="scroll-mt-24 pt-14 sm:pt-20">
+            <div class="text-center mb-10 reveal">
+                <span class="inline-flex items-center px-4 py-1.5 bg-purple-50 dark:bg-purple-900/30 border border-purple-100 dark:border-purple-800 text-purple-600 dark:text-purple-300 rounded-full text-xs font-bold uppercase tracking-wider shadow-sm mb-4">
+                    <i class="fa-solid fa-stethoscope mr-1.5"></i> Areas of Expertise
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white">Special <span class="gradient-text">treatments</span></h2>
+            </div>
+            <div id="doc-specialty-list" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            </div>
+        </section>
+
+        <!-- ══ CTA ══ -->
+        <section class="mt-16 relative overflow-hidden rounded-3xl bg-gradient-to-r from-brand-700 via-brand-800 to-slate-900 p-8 sm:p-14 text-center reveal-scale">
+            <div class="orb bg-white/10 w-64 h-64 -top-20 -right-16 float-slow"></div>
+            <div class="orb bg-accent-400/20 w-56 h-56 -bottom-24 -left-16 float-slow" style="animation-delay:-2s;"></div>
+            <div class="relative">
+                <h3 class="text-2xl sm:text-3xl font-extrabold text-white mb-3">Ready to consult <span id="doc-cta-doctor" class="text-accent-300"></span>?</h3>
+                <p class="text-white/70 max-w-xl mx-auto mb-8">Book your appointment today. Walk in any time — our emergency and OPD services are available 24/7.</p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <button id="doc-cta-book" class="doc-book-btn inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-white text-brand-700 font-bold shadow-xl hover:scale-[1.03] transition-all">
+                        <i class="fa-solid fa-calendar-check"></i> Book Appointment
+                    </button>
+                    <a href="tel:+919876543210" class="inline-flex items-center gap-2 px-8 py-3.5 rounded-full border border-white/30 text-white font-bold hover:bg-white/10 transition-all">
+                        <i class="fa-solid fa-phone"></i> +91 98765 43210
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
