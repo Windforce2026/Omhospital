@@ -157,52 +157,175 @@
     </div>
 </section>
 
-<!-- Department → Doctors Modal -->
-<div id="dept-doctors-modal" class="hidden fixed inset-0 z-[60] bg-black/60 backdrop-blur-md flex items-center justify-center p-4">
-    <div class="relative bg-white dark:bg-slate-900 rounded-3xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden flex flex-col">
+<!-- ══ Department Detail Page (full-screen immersive view) ══ -->
+<div id="dept-detail-page" class="dept-page hidden" aria-live="polite">
+    <!-- Back / close bar -->
+    <div class="relative z-20 flex items-center justify-between px-5 sm:px-8 py-4">
+        <button id="dd-close" class="dd-close inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border border-slate-200/70 dark:border-slate-700/50 text-sm font-bold text-slate-700 dark:text-slate-200 shadow-soft hover:shadow-premium hover:scale-[1.03] transition-all" aria-label="Back to departments">
+            <i class="fa-solid fa-arrow-left text-brand-600 dark:text-brand-400"></i> All Departments
+        </button>
+        <button id="dd-close-x" class="dd-close w-10 h-10 rounded-full bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border border-slate-200/70 dark:border-slate-700/50 text-slate-600 dark:text-slate-300 flex items-center justify-center shadow-soft hover:rotate-90 transition-all duration-300" aria-label="Close department page">
+            <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
+    </div>
 
-        <!-- Header -->
-        <div class="relative flex-shrink-0 bg-gradient-to-r from-brand-600 via-brand-700 to-brand-800 dark:from-brand-800 dark:via-brand-900 dark:to-slate-950 px-6 sm:px-10 py-7 flex items-center gap-5 overflow-hidden">
-            <div class="orb bg-white/10 dark:bg-white/5 w-48 h-48 -top-16 -right-10 float-slow"></div>
-            <div id="modal-dept-icon" class="relative w-14 h-14 rounded-2xl bg-white/15 backdrop-blur-sm text-white flex items-center justify-center text-2xl shadow-lg ring-1 ring-white/20"></div>
-            <div class="relative flex-1">
-                <p class="text-white/70 text-xs uppercase tracking-widest font-semibold mb-1">Specialized Department</p>
-                <h2 id="modal-dept-name" class="text-2xl sm:text-3xl font-extrabold text-white">Department</h2>
+    <!-- ══ Hero ══ -->
+    <header id="dd-hero" class="relative h-[88vh] min-h-[540px] overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-900/80 to-slate-950">
+            <img id="dd-hero-img" alt="" class="dd-hero-img absolute inset-0 w-full h-full object-cover opacity-60" loading="eager" onerror="this.style.display='none'">
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-50 dark:from-slate-950 via-slate-950/20 to-slate-950/60"></div>
+        <div class="orb bg-brand-500/30 w-96 h-96 -top-24 -right-24 float-slow"></div>
+        <div class="orb bg-accent-500/20 w-80 h-80 -bottom-32 -left-24 float-slow" style="animation-delay:-2s;"></div>
+
+        <div class="dd-hero-track relative h-full max-w-6xl mx-auto px-5 sm:px-8 flex flex-col justify-center">
+            <div class="dd-hero-animate d1 inline-flex self-start items-center gap-2 px-4 py-1.5 mb-6 rounded-full bg-white/10 dark:bg-white/10 backdrop-blur-md border border-white/20 text-white/90 text-xs sm:text-sm font-bold uppercase tracking-widest">
+                <i id="dd-hero-icon" class="fa-solid fa-droplet text-accent-400"></i> Specialized Department
             </div>
-            <button id="modal-close" class="relative w-10 h-10 rounded-full bg-white/15 hover:bg-white/30 text-white flex items-center justify-center transition" aria-label="Close modal">
-                <i class="fa-solid fa-xmark text-xl"></i>
-            </button>
-        </div>
 
-        <!-- Body -->
-        <div class="overflow-y-auto flex-1 min-h-0">
-            <div class="px-6 sm:px-10 py-7">
-                <p id="modal-dept-description" class="text-slate-600 dark:text-slate-300 leading-relaxed mb-6"></p>
+            <h1 id="dd-name" class="dd-hero-animate d2 text-4xl sm:text-6xl lg:text-7xl font-extrabold text-white leading-[1.05] max-w-4xl drop-shadow-2xl">Department</h1>
 
-                <h3 class="font-bold text-slate-900 dark:text-white mb-3 flex items-center">
-                    <i class="fa-solid fa-stethoscope text-brand-600 dark:text-brand-400 mr-2"></i> Key Procedures &amp; Treatments
-                </h3>
-                <div id="modal-dept-procedures" class="flex flex-wrap gap-2 mb-8">
-                    <!-- Procedure chips injected here by JavaScript -->
-                </div>
+            <div class="dd-hero-animate d3 flex items-center gap-3 mt-6 text-white/80 text-sm sm:text-base font-medium">
+                <span class="flex items-center gap-1.5"><i class="fa-solid fa-star text-amber-400"></i> Trusted Care</span>
+                <span class="w-1.5 h-1.5 rounded-full bg-accent-400"></span>
+                <span class="flex items-center gap-1.5"><i class="fa-solid fa-clock text-accent-400"></i> 24/7 Available</span>
+            </div>
 
-                <h3 class="font-bold text-slate-900 dark:text-white mb-3 flex items-center">
-                    <i class="fa-solid fa-user-doctor text-brand-600 dark:text-brand-400 mr-2"></i> Consulting Doctors
-                </h3>
-                <div id="modal-doctors-list" class="grid sm:grid-cols-2 gap-4">
-                    <!-- Doctors injected here by JavaScript -->
-                </div>
+            <p id="dd-tagline" class="dd-hero-animate d4 mt-4 text-white/85 text-base sm:text-lg max-w-2xl leading-relaxed"></p>
+
+            <div class="dd-hero-animate d4 flex flex-wrap gap-4 mt-8">
+                <button id="dd-book-appointment" class="dd-book inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-gradient-to-r from-brand-600 to-accent-500 text-white font-bold shadow-xl shadow-brand-500/30 hover:shadow-brand-500/50 hover:scale-[1.03] transition-all text-sm sm:text-base">
+                    <i class="fa-solid fa-calendar-check"></i> Book Appointment
+                </button>
+                <a href="tel:+919876543210" class="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-white/10 backdrop-blur-md border border-white/25 text-white font-bold hover:bg-white hover:text-slate-900 transition-all text-sm sm:text-base">
+                    <i class="fa-solid fa-phone"></i> Call Reception
+                </a>
             </div>
         </div>
 
-        <!-- Footer -->
-        <div class="flex-shrink-0 px-6 sm:px-10 py-5 border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/60 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <a href="tel:+919876543210" class="text-slate-600 dark:text-slate-300 hover:text-brand-600 dark:hover:text-brand-400 text-sm font-semibold transition">
-                <i class="fa-solid fa-phone mr-2"></i>Call Reception
-            </a>
-            <a href="#booking" id="modal-close-and-book" class="px-7 py-3 bg-gradient-to-r from-brand-600 to-brand-700 text-white font-bold rounded-full shadow-lg shadow-brand-500/25 hover:shadow-brand-500/40 transition text-sm">
-                <i class="fa-solid fa-calendar-check mr-2"></i>Book Appointment
-            </a>
+        <!-- Scroll indicator -->
+        <div class="dd-hero-animate d4 absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/70">
+            <span class="text-[11px] uppercase tracking-widest font-semibold">Scroll</span>
+            <div class="dd-mouse"></div>
         </div>
+    </header>
+
+    <!-- Sticky sub navigation -->
+    <nav id="dd-nav" class="dd-nav sticky top-0 z-30 border-b border-slate-200/70 dark:border-slate-800/70 bg-slate-50/85 dark:bg-slate-950/85 backdrop-blur-xl">
+        <div class="max-w-6xl mx-auto px-5 sm:px-8 flex items-center gap-1 sm:gap-2 overflow-x-auto py-3 text-xs sm:text-sm font-semibold text-slate-600 dark:text-slate-300">
+            <a href="#dd-overview" class="dd-nav-link active shrink-0 px-3 py-1.5 rounded-full hover:text-brand-600 dark:hover:text-white transition">Overview</a>
+            <a href="#dd-highlights" class="dd-nav-link shrink-0 px-3 py-1.5 rounded-full hover:text-brand-600 dark:hover:text-white transition">Why Choose</a>
+            <a href="#dd-treatments" class="dd-nav-link shrink-0 px-3 py-1.5 rounded-full hover:text-brand-600 dark:hover:text-white transition">Treatments</a>
+            <a href="#dd-doctors" class="dd-nav-link shrink-0 px-3 py-1.5 rounded-full hover:text-brand-600 dark:hover:text-white transition">Doctors</a>
+            <a href="#dd-faq" class="dd-nav-link shrink-0 px-3 py-1.5 rounded-full hover:text-brand-600 dark:hover:text-white transition">FAQ</a>
+        </div>
+    </nav>
+
+    <div class="max-w-6xl mx-auto px-5 sm:px-8">
+
+        <!-- ══ Overview ══ -->
+        <section id="dd-overview" class="scroll-mt-24 pt-14 sm:pt-20 grid lg:grid-cols-5 gap-10 items-center">
+            <div class="lg:col-span-3 reveal">
+                <span class="inline-flex items-center px-4 py-1.5 bg-brand-50 dark:bg-brand-900/40 border border-brand-100 dark:border-brand-800 text-brand-600 dark:text-brand-300 rounded-full text-xs font-bold uppercase tracking-wider shadow-sm mb-5">
+                    <i class="fa-solid fa-circle-info mr-1.5"></i> Department Overview
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mb-5">Comprehensive <span class="gradient-text">Care</span></h2>
+                <p id="dd-description" class="text-slate-600 dark:text-slate-300 leading-relaxed text-base sm:text-lg mb-6"></p>
+                <div class="flex items-center gap-3 text-sm text-slate-500 dark:text-slate-400">
+                    <i class="fa-solid fa-trophy text-amber-500 text-lg"></i>
+                    <span>Led by experienced specialists with modern medical technology.</span>
+                </div>
+            </div>
+
+            <!-- Stats band -->
+            <div class="lg:col-span-2 reveal-right">
+                <div id="dd-stats" class="grid grid-cols-2 gap-4">
+                    <!-- Counters injected by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- ══ Highlights ══ -->
+        <section id="dd-highlights" class="scroll-mt-24 pt-16 sm:pt-24">
+            <div class="text-center mb-10 reveal">
+                <span class="inline-flex items-center px-4 py-1.5 bg-accent-50 dark:bg-accent-900/30 border border-accent-100 dark:border-accent-800 text-accent-600 dark:text-accent-300 rounded-full text-xs font-bold uppercase tracking-wider shadow-sm mb-4">
+                    <i class="fa-solid fa-medal mr-1.5"></i> Why Choose Us
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white">What makes this department <span class="gradient-text">different</span></h2>
+            </div>
+            <div id="dd-highlight-cards" class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 reveal-stagger">
+                <!-- Highlight cards injected by JavaScript -->
+            </div>
+        </section>
+
+        <!-- ══ Treatments ══ -->
+        <section id="dd-treatments" class="scroll-mt-24 pt-16 sm:pt-24">
+            <div class="text-center mb-10 reveal">
+                <span class="inline-flex items-center px-4 py-1.5 bg-purple-50 dark:bg-purple-900/30 border border-purple-100 dark:border-purple-800 text-purple-600 dark:text-purple-300 rounded-full text-xs font-bold uppercase tracking-wider shadow-sm mb-4">
+                    <i class="fa-solid fa-stethoscope mr-1.5"></i> Key Procedures &amp; Treatments
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white">Advanced treatments we <span class="gradient-text">offer</span></h2>
+            </div>
+            <div id="dd-procedures" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 reveal-stagger">
+                <!-- Procedure cards injected by JavaScript -->
+            </div>
+        </section>
+
+        <!-- ══ Doctors ══ -->
+        <section id="dd-doctors" class="scroll-mt-24 pt-16 sm:pt-24">
+            <div class="text-center mb-10 reveal">
+                <span class="inline-flex items-center px-4 py-1.5 bg-pink-50 dark:bg-pink-900/30 border border-pink-100 dark:border-pink-800 text-pink-600 dark:text-pink-300 rounded-full text-xs font-bold uppercase tracking-wider shadow-sm mb-4">
+                    <i class="fa-solid fa-user-doctor mr-1.5"></i> Consulting Doctors
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white">Specialists in this <span class="gradient-text">department</span></h2>
+            </div>
+            <div id="dd-doctors-list" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 reveal-stagger">
+                <!-- Doctor cards injected by JavaScript -->
+            </div>
+        </section>
+
+        <!-- ══ FAQ ══ -->
+        <section id="dd-faq" class="scroll-mt-24 pt-16 sm:pt-24 pb-10">
+            <div class="text-center mb-10 reveal">
+                <span class="inline-flex items-center px-4 py-1.5 bg-emerald-50 dark:bg-emerald-900/30 border border-emerald-100 dark:border-emerald-800 text-emerald-600 dark:text-emerald-300 rounded-full text-xs font-bold uppercase tracking-wider shadow-sm mb-4">
+                    <i class="fa-solid fa-circle-question mr-1.5"></i> FAQ
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white">Frequently asked <span class="gradient-text">questions</span></h2>
+            </div>
+            <div id="dd-faq-list" class="max-w-3xl mx-auto space-y-4 reveal">
+                <!-- FAQ items injected by JavaScript -->
+            </div>
+        </section>
+
+        <!-- ══ Related + CTA ══ -->
+        <section class="pt-10 pb-10">
+            <div class="text-center mb-8 reveal">
+                <span class="inline-flex items-center px-4 py-1.5 bg-amber-50 dark:bg-amber-900/30 border border-amber-100 dark:border-amber-800 text-amber-600 dark:text-amber-300 rounded-full text-xs font-bold uppercase tracking-wider shadow-sm mb-4">
+                    <i class="fa-solid fa-diagram-project mr-1.5"></i> Explore More
+                </span>
+                <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">Other departments</h2>
+            </div>
+            <div id="dd-related" class="flex flex-wrap justify-center gap-3 reveal">
+                <!-- Related chips injected by JavaScript -->
+            </div>
+
+            <div class="mt-14 relative overflow-hidden rounded-3xl bg-gradient-to-r from-brand-700 via-brand-800 to-slate-900 p-8 sm:p-14 text-center reveal-scale">
+                <div class="orb bg-white/10 w-64 h-64 -top-20 -right-16 float-slow"></div>
+                <div class="orb bg-accent-400/20 w-56 h-56 -bottom-24 -left-16 float-slow" style="animation-delay:-2s;"></div>
+                <div class="relative">
+                    <i id="dd-cta-icon" class="fa-solid fa-hospital text-white/40 text-5xl mb-5"></i>
+                    <h3 class="text-2xl sm:text-3xl font-extrabold text-white mb-3">Ready to prioritise your health?</h3>
+                    <p class="text-white/70 max-w-xl mx-auto mb-8">Consult our specialists today. Walk in any time — our emergency and OPD services are available 24/7.</p>
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <button id="dd-cta-book" class="dd-book inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-white text-brand-700 font-bold shadow-xl hover:scale-[1.03] transition-all">
+                            <i class="fa-solid fa-calendar-check"></i> Book Appointment
+                        </button>
+                        <a href="tel:+919876543210" class="inline-flex items-center gap-2 px-8 py-3.5 rounded-full border border-white/30 text-white font-bold hover:bg-white/10 transition-all">
+                            <i class="fa-solid fa-phone"></i> +91 98765 43210
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
 </div>
