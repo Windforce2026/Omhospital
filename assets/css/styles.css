@@ -31,7 +31,7 @@ html {
 
 /* ── Gradient Text ── */
 .gradient-text {
-  background: linear-gradient(135deg, #2563eb, #06b6d4);
+  background: linear-gradient(135deg, #059669, #2dd4bf);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -123,8 +123,8 @@ html {
   animation: pulseGlow 2s ease-in-out infinite;
 }
 @keyframes pulseGlow {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.3); }
-  50% { box-shadow: 0 0 0 16px rgba(37, 99, 235, 0); }
+  0%, 100% { box-shadow: 0 0 0 0 rgba(5, 150, 105, 0.3); }
+  50% { box-shadow: 0 0 0 16px rgba(5, 150, 105, 0); }
 }
 
 /* ── Shimmer / Shine ── */
@@ -160,7 +160,7 @@ html {
   inset: 0;
   border-radius: inherit;
   padding: 1px;
-  background: linear-gradient(135deg, #2563eb, #06b6d4);
+  background: linear-gradient(135deg, #059669, #2dd4bf);
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
@@ -209,16 +209,16 @@ html {
   transition: background-color 0.2s ease, transform 0.2s ease;
 }
 .carousel-arrow:hover { background: rgba(15, 23, 42, 0.95); transform: translateY(-50%) scale(1.06); }
-.carousel-arrow:focus-visible { outline: 3px solid rgba(34, 211, 238, 0.8); outline-offset: 3px; }
+.carousel-arrow:focus-visible { outline: 3px solid rgba(94, 234, 212, 0.8); outline-offset: 3px; }
 .carousel-prev { left: 16px; }
 .carousel-next { right: 16px; }
 
 /* ── Banner Pulse ── */
 .banner-pulse { animation: bannerPulse 3s infinite; }
 @keyframes bannerPulse {
-  0% { box-shadow: 0 0 20px rgba(34, 211, 238, 0.3); }
-  50% { box-shadow: 0 0 40px rgba(34, 211, 238, 0.6); }
-  100% { box-shadow: 0 0 20px rgba(34, 211, 238, 0.3); }
+  0% { box-shadow: 0 0 20px rgba(94, 234, 212, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(94, 234, 212, 0.6); }
+  100% { box-shadow: 0 0 20px rgba(94, 234, 212, 0.3); }
 }
 
 /* ── Navbar active indicator ── */
@@ -233,7 +233,7 @@ html {
   transform: translateX(-50%) scaleX(0);
   width: 100%;
   height: 2px;
-  background: linear-gradient(90deg, #2563eb, #06b6d4);
+  background: linear-gradient(90deg, #059669, #2dd4bf);
   border-radius: 2px;
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   transform-origin: center;
@@ -255,13 +255,13 @@ html {
   left: -4px;
   font-size: 64px;
   line-height: 1;
-  color: rgba(37, 99, 235, 0.1);
+  color: rgba(5, 150, 105, 0.1);
   font-family: Georgia, serif;
   user-select: none;
   pointer-events: none;
 }
 .dark .quote-mark {
-  color: rgba(37, 99, 235, 0.15);
+  color: rgba(5, 150, 105, 0.15);
 }
 
 /* ── Form input premium ── */
@@ -270,8 +270,8 @@ html {
 }
 .input-premium:focus {
   transform: translateY(-1px);
-  border-color: #2563eb;
-  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+  border-color: #059669;
+  box-shadow: 0 0 0 4px rgba(5, 150, 105, 0.1);
 }
 
 /* ── Button shine effect ── */
@@ -296,17 +296,17 @@ html {
 
 /* ── Background Pattern ── */
 .bg-dots {
-  background-image: radial-gradient(rgba(37, 99, 235, 0.08) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(5, 150, 105, 0.08) 1px, transparent 1px);
   background-size: 24px 24px;
 }
 .dark .bg-dots {
-  background-image: radial-gradient(rgba(37, 99, 235, 0.12) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(5, 150, 105, 0.12) 1px, transparent 1px);
 }
 
 /* ── Gradient divider ── */
 .gradient-divider {
   height: 2px;
-  background: linear-gradient(90deg, transparent, #2563eb, #06b6d4, transparent);
+  background: linear-gradient(90deg, transparent, #059669, #2dd4bf, transparent);
   border: none;
 }
 
@@ -381,7 +381,7 @@ html {
   position: absolute;
   inset: -4px;
   border-radius: inherit;
-  background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), rgba(37, 99, 235, 0.12), transparent 60%);
+  background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), rgba(5, 150, 105, 0.12), transparent 60%);
   pointer-events: none;
   opacity: 0;
   transition: opacity 0.3s;
@@ -416,7 +416,7 @@ html {
   position: absolute;
   inset: -2px;
   border-radius: inherit;
-  background: linear-gradient(135deg, #2563eb, #06b6d4, #2563eb);
+  background: linear-gradient(135deg, #059669, #2dd4bf, #059669);
   background-size: 200% 200%;
   animation: gradientSpin 3s linear infinite;
   z-index: -1;
@@ -435,11 +435,11 @@ html {
   z-index: 70;
   overflow-y: auto;
   overflow-x: hidden;
-  background-color: rgb(248 250 252);
+  background-color: rgb(236 253 245);
   scroll-behavior: smooth;
 }
 .dark .dept-page {
-  background-color: rgb(2 6 23);
+  background-color: rgb(2 44 34);
 }
 
 /* Slide-up entrance for the whole page */
@@ -503,12 +503,12 @@ html {
   width: 70%;
   height: 2px;
   border-radius: 2px;
-  background: linear-gradient(90deg, #2563eb, #06b6d4);
+  background: linear-gradient(90deg, #059669, #2dd4bf);
   transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .dd-nav-link.active::after { transform: translateX(-50%) scaleX(1); }
-.dd-nav-link.active { color: #2563eb; font-weight: 700; }
-.dark .dd-nav-link.active { color: #60a5fa; }
+.dd-nav-link.active { color: #059669; font-weight: 700; }
+.dark .dd-nav-link.active { color: #34d399; }
 
 /* Feature highlight card hover */
 .dd-feature {
@@ -516,7 +516,7 @@ html {
 }
 .dd-feature:hover {
   transform: translateY(-6px);
-  box-shadow: 0 24px 60px -18px rgba(37, 99, 235, 0.25);
+  box-shadow: 0 24px 60px -18px rgba(5, 150, 105, 0.25);
 }
 
 /* Procedure card hover */
@@ -525,9 +525,9 @@ html {
 }
 .dd-proc:hover {
   transform: translateY(-4px) scale(1.02);
-  background: linear-gradient(135deg, #2563eb, #06b6d4);
+  background: linear-gradient(135deg, #059669, #2dd4bf);
   color: #fff;
-  box-shadow: 0 18px 45px -12px rgba(37, 99, 235, 0.45);
+  box-shadow: 0 18px 45px -12px rgba(5, 150, 105, 0.45);
 }
 .dd-proc:hover .dd-proc-icon {
   background: rgba(255, 255, 255, 0.2);
