@@ -935,6 +935,167 @@ const DOCTOR_DETAILS = {
       { degree: '16+ Years Experience', note: 'Complex pregnancy, high-risk delivery and women\u2019s health care' }
     ],
     specialties: ['Normal Delivery', 'C-Section (Caesarean)', 'High-Risk Pregnancy Care', 'Early Pregnancy Care', 'Ectopic Pregnancy Management', 'PCOD / PCOS Treatment', 'Infertility Consultation', 'Wellness & Teens Clinic']
+  },
+  'Dr. Chandra Shekhar Yadav': {
+    photo: 'assets/img/dr-chandra-shekhar-yadav.png',
+    specialty: 'Paediatrician',
+    qualificationLine: 'MBBS, DCH · 8+ Years Experience',
+    about: 'Dr. Chandra Shekhar Yadav, MBBS, DCH, is a dedicated paediatrician with over 8 years of experience in child and newborn healthcare. He completed his MBBS from Tamil Nadu Dr. MGR Medical University in 2011 and further specialised with a Diploma in Child Health (DCH) from King George\u2019s Medical College, Lucknow University in 2017. He practises at CSR Rainbow Child Care & Vaccination Clinic in Ghaziabad, providing personalised and compassionate care to children from birth through adolescence.',
+    qualifications: [
+      { degree: 'MBBS', note: 'Tamil Nadu Dr. MGR Medical University (2011)' },
+      { degree: 'DCH', note: 'Diploma in Child Health \u2014 King George\u2019s Medical College, Lucknow University (2017)' },
+      { degree: '8+ Years Experience', note: 'Child and newborn healthcare, growth monitoring and vaccination' }
+    ],
+    specialties: ['Newborn Care', 'Routine Vaccination', 'Catch-up Vaccination', 'Growth & Development Assessment', 'Feeding & Nutrition Counseling', 'Allergy & Asthma Care', 'Child Constipation Treatment', 'OPD Consultation']
+  },
+  'Dr. Dhiraj Jhamb': {
+    photo: 'assets/img/dr-dhiraj-jhamb.jpg',
+    specialty: 'Cardiothoracic & Vascular Surgeon',
+    qualificationLine: 'MBBS, MS, MCh (Cardiothoracic & Vascular Surgery) · 20+ Years Experience',
+    about: 'Dr. Dhiraj Jhamb is a Director and Senior Consultant of Cardiovascular & Thoracic Surgery with over two decades of experience in adult cardiac surgery and thoracic procedures. An alumnus of the Armed Forces Medical College, he has served in leadership roles at premier cardiac centres in Pune, Delhi and Bangalore. His expertise spans coronary artery bypass grafting (CABG), valve repairs and replacements, aortic surgeries, thoracic interventions and high-risk emergency procedures. Dr. Jhamb combines surgical innovation with patient-centered care.',
+    qualifications: [
+      { degree: 'MCh (CTVS)', note: 'Cardiothoracic & Vascular Surgery \u2014 Armed Forces Medical College, MUHS (2010)' },
+      { degree: 'MS', note: 'General Surgery \u2014 Armed Forces Medical College, University of Pune (2002)' },
+      { degree: 'MBBS', note: 'Armed Forces Medical College, University of Poona (1994)' },
+      { degree: '20+ Years Experience', note: 'CABG, valve repair/replacement, aortic & high-risk cardiac surgery' }
+    ],
+    specialties: ['Coronary Artery Bypass Grafting (CABG)', 'Valve Repair & Replacement', 'Aortic Surgery', 'Thoracic Surgery', 'Minimally Invasive Cardiac Surgery', 'High-Risk Emergency Cardiac Procedures', 'Heart Failure Surgery', 'Adult Cardiac Surgery']
+  },
+  'Dr. Prashant Swarnkar': {
+    photo: 'assets/img/dr-prashant-swarnkar.webp',
+    specialty: 'Internal Medicine Physician',
+    qualificationLine: 'MBBS, MD (Internal Medicine) · 11+ Years Experience',
+    about: 'Dr. Prashant Swarnkar is a Consultant Physician specialising in Internal Medicine with over 11 years of clinical experience. He earned his MBBS from Santosh University, Ghaziabad in 2014 and completed MD Internal Medicine from Sharda University in 2021. In addition to hospital practice, he is an Assistant Professor of Medicine and the founder of Doctors On Duty (DOD), a healthtech initiative making quality care more accessible. He is known for accurate diagnosis and empathetic management of acute and chronic medical conditions.',
+    qualifications: [
+      { degree: 'MBBS', note: 'Santosh University, Ghaziabad (2014)' },
+      { degree: 'MD (Internal Medicine)', note: 'Sharda University, Greater Noida (2021)' },
+      { degree: '11+ Years Experience', note: 'Diagnosis & management of fever, diabetes, hypertension and general medical conditions' }
+    ],
+    specialties: ['Fever & Infection Management', 'Diabetes Management', 'Hypertension Care', 'General Medical Consultation', 'Preventive Health Screening', 'Respiratory Infections', 'Lifestyle & Wellness Counselling', 'Telemedicine Consultation']
+  },
+  'Dr. Shivam Agarwal': {
+    photo: 'assets/img/dr-shivam-agarwal.webp',
+    specialty: 'Dental & Maxillofacial Surgeon',
+    qualificationLine: 'BDS, MDS (Oral & Maxillofacial Surgery)',
+    about: 'Dr. Shivam Agarwal is an oral and maxillofacial surgeon holding an MDS in Oral & Maxillofacial Surgery. He is currently Reader in the Department of Oral & Maxillofacial Surgery at Santosh Dental College & Hospital, Ghaziabad, and previously served on the faculty of I.T.S. Centre for Dental Studies & Research, Ghaziabad. He has contributed to published research on mandibular fracture management, third-molar extraction complications and oral carcinoma, and is experienced in routine dental care along with complex oral surgical procedures.',
+    qualifications: [
+      { degree: 'BDS', note: 'Bachelor of Dental Surgery' },
+      { degree: 'MDS (OMFS)', note: 'Master of Dental Surgery — Oral & Maxillofacial Surgery' },
+      { degree: 'Reader', note: 'Dept. of Oral & Maxillofacial Surgery, Santosh Dental College & Hospital, Ghaziabad' }
+    ],
+    specialties: ['Surgical Wisdom Tooth Extraction', 'Dentoalveolar Surgery', 'Maxillofacial Trauma Care', 'Dental Implants', 'Root Canal & Fillings', 'Scaling & Gum Care', 'Oral Cyst & Tumour Management', 'Complete Oral Care']
+  },
+  'Dr. Arvind Tiwari': {
+    photo: 'assets/img/dr-arvind-tiwari.webp',
+    specialty: 'Urologist',
+    qualificationLine: 'MBBS, MS, MCh (Urology) · 20+ Years Experience',
+    about: 'Dr. Arvind Tiwari is a highly experienced Urologist and Uro-Surgeon with over 20 years of clinical expertise. He is affiliated with Goyal Hospital & Urology Centre, a premier urology referral centre, and is a member of the Urological Society of India (USI) and the Association of Surgeons of India (ASI). His clinical focus includes kidney stone management (PCNL/URS), endourology, prostate surgery and uro-oncology, and he has presented papers at national urology conferences.',
+    qualifications: [
+      { degree: 'MCh (Urology)', note: 'Master of Chirurgiae — Urology' },
+      { degree: 'MS', note: 'Master of Surgery — General Surgery' },
+      { degree: 'MBBS', note: 'Bachelor of Medicine & Bachelor of Surgery' },
+      { degree: '20+ Years Experience', note: 'Kidney stone management, endourology & prostate surgery' }
+    ],
+    specialties: ['Kidney Stone Management (PCNL/URS)', 'Endourology', 'Prostate Surgery (TURP)', 'Uro-Oncology', 'Cystectomy & Nephrectomy', 'Urethral Stricture Repair', 'TURBT (Bladder Tumour)', 'Reconstructive Urology']
+  },
+  'Dr. Nripen Vishnoi': {
+    photo: 'assets/img/dr-nripen-vishnoi.png',
+    specialty: 'ENT & Head-Neck Surgeon',
+    qualificationLine: 'MBBS, MS (ENT) · 13+ Years Experience',
+    about: 'Dr. Nripen Vishnoi is a dynamic ENT, head & neck surgeon who has performed more than 8000 ENT surgeries independently, including 50+ challenging endoscopic pituitary surgeries and CSF leak repairs. He is a Senior Consultant at Yashoda Hospital, Ghaziabad, and was the pioneer of the first cochlear implant in Ghaziabad in a 13-month-old baby. He specialises in minimally invasive ENT procedures and difficult head & neck cases.',
+    qualifications: [
+      { degree: 'MS (ENT)', note: 'NSCB Medical College, Jabalpur' },
+      { degree: 'MBBS', note: 'Kasturba Medical College, Mangalore' },
+      { degree: '13+ Years Experience', note: '8000+ ENT surgeries including minimally invasive procedures' }
+    ],
+    specialties: ['Functional Endoscopic Sinus Surgery (FESS)', 'Cochlear Implant Surgery', 'Endoscopic Pituitary Surgery & CSF Leak Repair', 'Minimally Invasive Ear Surgery', 'Septoplasty', 'Tonsillectomy & Adenoidectomy', 'Tympanoplasty & Stapedectomy', 'Skull Base Surgery']
+  },
+  'Dr. Sumit Kumar Singh': {
+    photo: 'assets/img/dr-sumit-kumar-singh.webp',
+    specialty: 'Orthopedic Surgeon',
+    qualificationLine: 'MBBS, MS (Orthopedics)',
+    about: 'Dr. Sumit Kumar Singh is an orthopaedic surgeon at Rama Hospital, Hapur, serving patients across the Ghaziabad–Hapur belt. He is committed to accurate diagnosis and evidence-based orthopaedic treatment, focusing on fracture care, joint pain management and trauma surgery for bone and joint conditions.',
+    qualifications: [
+      { degree: 'MS (Orthopedics)', note: 'Master of Surgery — Orthopaedics' },
+      { degree: 'MBBS', note: 'Bachelor of Medicine & Bachelor of Surgery' },
+      { degree: 'Rama Hospital', note: 'Orthopaedics — Rama Medical College, Hospital & Research Centre, Hapur' }
+    ],
+    specialties: ['Fracture Care', 'Joint Pain Management', 'Trauma Surgery', 'Spine-Related Conditions', 'Knee & Hip Replacement', 'Arthroscopy & Sports Injuries', 'Ligament Injuries', 'Minimally Invasive Orthopedic Procedures']
+  },
+  'Dr. Vinod Kumar Singh': {
+    photo: 'assets/img/dr-vinod-kumar-singh.webp',
+    specialty: 'General & Laparoscopic Surgeon',
+    qualificationLine: 'MBBS, MS · FMAS, FIAGES · 14+ Years Experience',
+    about: 'Dr. Vinod Kumar Singh is a General, Laparoscopic and Bariatric Surgeon with over 14 years of experience in advanced minimally invasive and robotic surgery. He holds fellowships including FMAS (Gem Hospital, Coimbatore), FIAGES, FALS and FAIS, and has served as an Assistant Professor of Surgery at RAMA Medical College & Hospital, Ghaziabad. His practice covers advanced laparoscopic procedures, laser proctology and GI surgery with faster recovery and minimal invasiveness.',
+    qualifications: [
+      { degree: 'MS (General Surgery)', note: 'Guru Gobind Singh Indraprastha University, Delhi (2017)' },
+      { degree: 'MBBS', note: 'King George\u2019s Medical University, Lucknow (2012)' },
+      { degree: 'FMAS / FIAGES / FALS / FAIS', note: 'Fellowships in advanced laparoscopic & bariatric surgery' },
+      { degree: '14+ Years Experience', note: 'Advanced laparoscopic, robotic & bariatric surgery' }
+    ],
+    specialties: ['Advanced Laparoscopic Surgery', 'Bariatric & Metabolic Surgery', 'Robotic Surgery', 'Laser Piles / Fissure / Fistula Treatment', 'Hernia Repair', 'Gallbladder Surgery', 'Appendectomy', 'GI & Colorectal Surgery']
+  },
+  'Dr. Vimal Kumar': {
+    photo: 'assets/img/dr-vimal-kumar.webp',
+    specialty: 'Neuro & Spine Surgeon',
+    qualificationLine: 'MBBS, MS, MCh (Neuro Surgery) · 26+ Years Experience',
+    about: 'Dr. Vimal Kumar (Agarwal) is a Senior Consultant and Head of Neurosurgery with 26 years of experience. He completed his MBBS from University College of Medical Sciences, Delhi (1998), MS General Surgery from Lady Hardinge Medical College, New Delhi (2003) and MCh Neuro Surgery from SGPGI, Lucknow (2006). Associated with leading hospitals in Ghaziabad including Le Crest Hospital, Vasundhara and Yashoda Hospital, Nehru Nagar, he is known for accurate diagnosis and empathetic care in brain, spine and peripheral nerve surgery.',
+    qualifications: [
+      { degree: 'MCh (Neuro Surgery)', note: 'Sanjay Gandhi PGIMS (SGPGI), Lucknow (2006)' },
+      { degree: 'MS', note: 'Lady Hardinge Medical College, New Delhi (2003)' },
+      { degree: 'MBBS', note: 'University College of Medical Sciences, Delhi (1998)' },
+      { degree: '26+ Years Experience', note: 'Brain, spine & peripheral nerve surgery' }
+    ],
+    specialties: ['Brain Tumour Surgery (Craniotomy)', 'Spine Surgery & Microdiscectomy', 'Head Injury & Neurotrauma Care', 'Cerebrovascular Surgery (Aneurysm, Stroke)', 'Spinal Fixation & Kyphoplasty', 'VP Shunt', 'Functional Neurosurgery', 'Congenital Brain & Spine Disorders']
+  },
+  'Dr. Manu Kaushik': {
+    specialty: 'Physiotherapist',
+    qualificationLine: 'BPT, MPT (Orthopedics)',
+    about: 'Dr. Manu Kaushik is a physiotherapist with a BPT and MPT in Orthopedics from Swami Vivekananda Subharti University, Meerut. He provides rehabilitation and physical therapy for injury recovery, pain management and mobility enhancement.',
+    qualifications: [
+      { degree: 'MPT (Orthopedics)', note: 'Master of Physiotherapy — Orthopedics, Subharti University, Meerut' },
+      { degree: 'BPT', note: 'Bachelor of Physiotherapy' }
+    ],
+    specialties: ['Injury Recovery', 'Pain Management', 'Mobility Enhancement', 'Sports Rehabilitation', 'Post-operative Physiotherapy', 'Posture Correction', 'Exercise Therapy', 'Mobility Assessment']
+  },
+  'Dr. Mohan Bandhu Gupta': {
+    photo: 'assets/img/dr-mohan-bandhu-gupta.jpg',
+    specialty: 'Chest & Respiratory Physician',
+    qualificationLine: 'MBBS, MD (Respiratory Medicine) · 20+ Years Experience',
+    about: 'Dr. Mohan Bandhu Gupta is a Senior Consultant, Chest & Allergy at Yashoda Hospital & Research Centre, Ghaziabad, and Professor & HOD at Sharda University, with over two decades of experience. He is recognised as one of the most reputed chest physicians in Delhi NCR, with deep knowledge of ICU and ventilator management and expertise in bronchoscopy procedures. He is a member of the National College of Chest Physicians (NCCP) and the Indian Society of Critical Care Medicine (ISCCM).',
+    qualifications: [
+      { degree: 'MD (Respiratory Medicine)', note: 'King George\u2019s Medical University, Lucknow (2000)' },
+      { degree: 'MBBS', note: 'King George\u2019s Medical University, Lucknow (1995)' },
+      { degree: 'FCCS', note: 'Fellowship, Fundamentals of Critical Care Support, USA (2003)' },
+      { degree: '20+ Years Experience', note: 'Chest diseases, asthma, TB & critical care' }
+    ],
+    specialties: ['Asthma & Allergy Care', 'Lung Disease Management', 'Tuberculosis Management', 'Bronchoscopy', 'Ventilator Management', 'ICU & Critical Care', 'COPD Treatment', 'Pneumonia & Respiratory Infections']
+  },
+  'Dr. Ajay Gupta': {
+    photo: 'assets/img/dr-ajay-gupta.jpg',
+    specialty: 'Gastroenterologist & Hepatologist',
+    qualificationLine: 'MBBS, MD, DNB (Gastroenterology) · 34+ Years Experience',
+    about: 'Dr. Ajay Gupta is a Medical Gastroenterologist and Hepatologist with over 34 years of experience. He completed his MBBS (1991) and MD General Medicine (1995) from Maulana Azad Medical College, New Delhi, and DNB Gastroenterology from Sir Ganga Ram Hospital, Delhi (1999). Associated with leading hospitals in Ghaziabad including Manav Hospital and Narinder Mohan Hospital, he is known for accurate diagnosis and empathetic care in digestive, liver and endoscopy procedures.',
+    qualifications: [
+      { degree: 'DNB (Gastroenterology)', note: 'Sir Ganga Ram Hospital, New Delhi (1999)' },
+      { degree: 'MD (General Medicine)', note: 'Maulana Azad Medical College, New Delhi (1995)' },
+      { degree: 'MBBS', note: 'Maulana Azad Medical College, New Delhi (1991)' },
+      { degree: '34+ Years Experience', note: 'Gastrointestinal, liver & endoscopy care' }
+    ],
+    specialties: ['Upper GI Endoscopy', 'Colonoscopy', 'Liver Disease & Cirrhosis Management', 'Chronic Liver Disease Care', 'Gastroesophageal Reflux (GERD)', 'Ulcer & IBD Treatment', 'Gallstones & Abdominal Pain', 'Fibroscan & Non-invasive Liver Assessment']
+  },
+  'Dr. Sumit Sharma': {
+    photo: 'assets/img/dr-sumit-sharma.webp',
+    specialty: 'Nephrologist',
+    qualificationLine: 'MBBS, MD · Fellowship in Nephrology · 10+ Years Experience',
+    about: 'Dr. Sumit Sharma is an experienced Consultant Nephrologist with 10+ years of clinical expertise in managing kidney-related disorders. He is currently associated with Avee Hospital, Vaishali, Ghaziabad, providing comprehensive care for chronic kidney disease, acute kidney injury and dialysis management. He combines procedural expertise (dialysis access, haemodialysis catheterisation) with compassionate, patient-centered care.',
+    qualifications: [
+      { degree: 'Fellowship in Nephrology', note: 'Specialisation in kidney disease & dialysis' },
+      { degree: 'MD', note: 'Doctor of Medicine — Internal Medicine' },
+      { degree: 'MBBS', note: 'Bachelor of Medicine & Bachelor of Surgery' },
+      { degree: '10+ Years Experience', note: 'CKD, dialysis & renal emergencies — Avee Hospital, Vaishali' }
+    ],
+    specialties: ['Chronic Kidney Disease (CKD) Care', 'Haemodialysis Management', 'Peritoneal Dialysis', 'Dialysis Catheter & Permcath Placement', 'Acute Kidney Injury Care', 'Electrolyte Imbalance Management', 'Renal Emergencies', 'Kidney Transplant Follow-up Counselling']
   }
 };
 
