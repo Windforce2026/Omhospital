@@ -794,7 +794,7 @@ function initDepartmentDetail() {
     const details = { ...DEPARTMENT_FALLBACK_DETAILS, ...DEPARTMENT_DETAILS[deptName], ...DEPARTMENT_PAGE_DETAILS[deptName] };
 
     heroImg.src = details.image;
-    heroImg.alt = `${deptName} department at Om Multi Speciality Hospital`;
+    heroImg.alt = `${deptName} department at Om Multi Speciality Hospital & Ayush Centre`;
     heroIcon.className = details.icon;
     nameEl.textContent = deptName;
     taglineEl.textContent = details.tagline || DEPARTMENT_FALLBACK_DETAILS.tagline;
@@ -808,7 +808,7 @@ function initDepartmentDetail() {
     renderFaq(details);
     renderRelated(details, deptName);
 
-    document.title = `${deptName} | Om Multi Speciality Hospital`;
+    document.title = `${deptName} | Om Multi Speciality Hospital & Ayush Centre`;
 
     page.classList.add('anim-in');
     page.classList.remove('hidden');
@@ -821,7 +821,7 @@ function initDepartmentDetail() {
     page.classList.add('hidden');
     page.classList.remove('anim-in');
     document.body.style.overflow = '';
-    document.title = 'Om Multi Speciality Hospital (Formally Known as Om Multi Speciality Hospital & Ayush Centre) — Ghaziabad';
+    document.title = 'Om Multi Speciality Hospital & Ayush Centre — Ghaziabad';
     const departmentsSection = document.getElementById('departments');
     if (departmentsSection) departmentsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
@@ -1138,7 +1138,7 @@ function initDoctorDetail() {
     const degrees = details.qualifications ? details.qualifications.map(q => q.degree) : parseDegreeLine(descText);
 
     heroImg.src = cardPhoto;
-    heroImg.alt = `${doctorName} at Om Multi Speciality Hospital`;
+    heroImg.alt = `${doctorName} at Om Multi Speciality Hospital & Ayush Centre`;
     photo.src = cardPhoto;
     photo.alt = heroImg.alt;
     if (cardPhoto) {
@@ -1153,7 +1153,7 @@ function initDoctorDetail() {
     nameEl.textContent = doctorName;
     specialtyBadge.textContent = details.specialty || dept || 'Consulting Specialist';
     qualLine.textContent = details.qualificationLine || degrees.join(', ') || 'Consulting Specialist';
-    aboutText.textContent = details.about || descText || `${doctorName} is a consulting specialist at Om Multi Speciality Hospital, Ghaziabad.`;
+    aboutText.textContent = details.about || descText || `${doctorName} is a consulting specialist at Om Multi Speciality Hospital & Ayush Centre, Ghaziabad.`;
     ctaDoctor.textContent = doctorName.replace(/^Dr\.?\s*/i, 'Dr. ');
 
     const qualData = details.qualifications || degrees.map(d => ({ degree: d, note: '' }));
@@ -1185,7 +1185,7 @@ function initDoctorDetail() {
       specialtyList.innerHTML = '<p class="col-span-full text-sm text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-800/50 rounded-2xl p-8 text-center">Please call reception for the latest information about this specialist.</p>';
     }
 
-    document.title = `${doctorName} | Om Multi Speciality Hospital`;
+    document.title = `${doctorName} | Om Multi Speciality Hospital & Ayush Centre`;
     page.classList.add('anim-in');
     page.classList.remove('hidden');
     page.scrollTop = 0;
@@ -1196,7 +1196,7 @@ function initDoctorDetail() {
     page.classList.add('hidden');
     page.classList.remove('anim-in');
     document.body.style.overflow = '';
-    document.title = 'Om Multi Speciality Hospital (Formally Known as Om Multi Speciality Hospital & Ayush Centre) — Ghaziabad';
+    document.title = 'Om Multi Speciality Hospital & Ayush Centre — Ghaziabad';
     const doctorsSection = document.getElementById('doctors');
     if (doctorsSection) doctorsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
